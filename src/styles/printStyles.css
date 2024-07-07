@@ -1,0 +1,21 @@
+@page {
+  size: auto; /* auto is the initial value */
+  margin: 15mm; /* this affects the margin in the print preview */
+}
+
+.print-container {
+  width: 100%;
+}
+
+@media print {
+  /* Additional print-specific styles if needed */
+  .print-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure page breaks work correctly */
+  .print-container div[style*='page-break-after'] {
+    page-break-after: always;
+  }
+}
