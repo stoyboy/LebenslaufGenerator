@@ -14,8 +14,8 @@ const Education: FC<EducationProps> = ({ institutes }) => {
     <section className='mb-6'>
       <h2 className='text-2xl font-bold mb-4'>Ausbildung</h2>
       <div className='space-y-4'>
-        {institutes.map((institute) => (
-          <div>
+        {institutes.map((institute, index) => (
+          <div key={index}>
             <h3 className='text-lg font-semibold mb-1'>{institute.name}</h3>
             <p className='text-muted-foreground'>
               {institute.address} | {institute.timespan}
