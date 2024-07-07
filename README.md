@@ -1,40 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Welcome to LebenslaufGenerator 👋</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-## Getting Started
+> Ein einfaches Tool, um minimalistische Lebensläufe zu erstellen. Von Entwicklern für Entwickler konzipiert, bietet es eine **kopfschmerzfreie** Alternative zu Microsoft Word.
 
-First, run the development server:
+## Vorschau
+![alt text](preview.png)
 
-```bash
+## Verwendung
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Datenfüllung
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Die Datei `./src/data/ResumeData.tsx` muss angepasst werden, um relevante Informationen einzufügen.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```ts
+export const RESUME_DATA = {
+  contactInfo: {
+    name: 'Max Mustermann',
+    jobtitle: 'Software Developer',
+    email: 'max.mustermann@hotmail.com',
+    phone: '+43660123456789',
+    address: 'Musterstraße 1, 1000 Musterstadt',
+    dob: '01.01.2000',
+    placeOfBirth: 'Musterort',
+  },
+  aboutMe: {
+    text: 'Ich bin Max Mustermann',
+  },
+  skills: {
+    categories: [
+      {
+        title: 'Web-Entwicklung',
+        skills: ['React/Next.js', 'TypeScript/JavaScript', 'HTML/CSS'],
+      },
+      {
+        title: 'Serverseitige Entwicklung',
+        skills: ['NodeJS', 'PHP'],
+      },
+      {
+        title: 'Datenbanken und Abfragesprachen',
+        skills: ['SQL'],
+      },
+      {
+        title: 'Versionskontrolle und Deployment',
+        skills: ['Git'],
+      },
+    ],
+  },
+  experiences: {
+    jobs: [
+      {
+        companyname: 'Musterfirma 1, Musterstadt',
+        jobtitle: 'Software Developer',
+        timespan: 'Jänner 2022 - heute',
+        tasks: ['Dies', "Das", "Ananas"],
+      },
+      {
+        companyname: 'Musterfirma 1, Musterstadt',
+        jobtitle: 'Software Developer',
+        timespan: 'Jänner 2020 - Dezember 2022',
+        tasks: ['Dies', "Das", "Ananas"],
+      },
+    ],
+  },
+  education: {
+    institutes: [
+      {
+        name: 'Musteruni',
+        address: 'Musterstraße 10, 1000 Musterstadt',
+        timespan: 'September 2018 - August 2021',
+      },
+      {
+        name: 'Musterschule',
+        address: 'Musterstraße 20, 1000 Musterstadt',
+        timespan: 'September 2010 - Juni 2018',
+        info: ['Mit ausgezeichnetem Erfolg bestanden (Notenschnitt: 1,0)'],
+      },
+    ],
+  },
+} satisfies ResumeProps;
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**Fotoeinbindung**: Ein Foto mit dem Namen `ResumePhoto.jpg` muss im Ordner `./src/assets` ersetzt werden.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Author
 
-## Learn More
+👤 **Jovan Stojimirovic**
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Github: [@stoyboy](https://github.com/stoyboy)
