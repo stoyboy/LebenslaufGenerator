@@ -16,8 +16,8 @@ const Skills: FC<SkillsProps> = ({ categories }) => {
           <div>
             <h3 className='text-lg font-medium mb-2'>{category.title}</h3>
             <ul className='list-disc pl-4 text-muted-foreground font-mono'>
-              {category.skills.map((skill) => (
-                <li>{skill}</li>
+              {category.skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
               ))}
             </ul>
           </div>

@@ -21,8 +21,8 @@ const Education: FC<EducationProps> = ({ institutes }) => {
               {institute.address} | {institute.timespan}
             </p>
             <ul className='list-disc pl-4 text-muted-foreground font-mono mt-2'>
-              {institute.info?.map((info) => (
-                <li>{info}</li>
+              {institute.info?.map((info, index) => (
+                <li key={index}>{info}</li>
               ))}
             </ul>
           </div>
